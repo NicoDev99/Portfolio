@@ -1,3 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base" ;
+@import "tailwindcss/utilities";
+
+
+/* Fonts */
+
+/* Rhodium Libre */
+@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&display=swap');
+
+/* Roboto Medium */
+@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&family=Roboto:ital,wght@0,100;0,300;0,500;1,100&display=swap');@import url('https://fonts.googleapis.com/css2?family=Rhodium+Libre&family=Roboto:ital,wght@0,100;0,300;0,500;1,100&display=swap');
+
+/* Habibi */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&display=swap');
+
+/* Gruppo */
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');

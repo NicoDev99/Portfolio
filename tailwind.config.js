@@ -54,7 +54,9 @@ export default {
       "RhodiumLibre": ["Rhodium Libre", "sans-serif"],
       "Roboto": ["Roboto", "sans-serif"],
       "Habibi": ["Habibi", "sans-serif"],
-      "Gruppo": ["Gruppo", "sans-serif"]
+      "Gruppo": ["Gruppo", "sans-serif"],
+      "ZenTokyoZoo" : ["Zen Tokyo Zoo", "sans-serif"],
+      "ZenOldMincho": ["Zen Old Mincho", "sans-serif"],
     }
   },
   plugins: [

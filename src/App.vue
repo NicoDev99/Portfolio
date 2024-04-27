@@ -44,7 +44,7 @@
             <Separator class="block mx-auto mt-12 translate-y-6 animate-[transformBottomTop_1s_ease_forwards]"/>
         </div>
 
-        <a href="#about-me" class="block mx-auto absolute bottom-6 left-0 right-0 cursor-pointer border border-solid border-white rounded-full w-fit">
+        <a href="#about-me" class="block mx-auto absolute bottom-10 left-0 right-0 cursor-pointer border border-solid border-white rounded-full w-fit">
             <ArrowIcon color="white" class="animate-[transformTopBottom_1s_ease] my-1.5 px-1 sm:px-0 sm:mx-1 sm:my-2.5" />
         </a>
     </div>
@@ -54,13 +54,11 @@
     <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-auto" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
         
         <!-- About me -->
-        <div class="pt-20 px-20">
-            <div class="flex justify-between">
-                <h1 class="uppercase font-ZenTokyoZoo text-8xl text-white leading-tight">A propos <br />de moi</h1>
-                <img src="/img/shooting_star.png" alt="Etoile filante" class="w-1/3 h-[100px]">
-            </div>
+        <div class="pt-20 px-20 pb-[600px] relative" id="about-me">
+            <h1 class="uppercase font-ZenTokyoZoo text-8xl text-white leading-tight">A propos <br />de moi</h1>
+            <img src="/img/shooting_star.png" alt="Etoile filante" class="hidden xl:block absolute top-20 right-20 animate-[shootingStar_1s_ease]">
 
-            <div class="relative pb-96 mx-32">
+            <div class="relative pb-96 mx-40">
                 <div class="flex gap-x-7 absolute -top-10">
                     <img src="/img/photo_profil.png" alt="Etoile filante" class="w-96 h-96 rounded-xl">
 
@@ -70,9 +68,29 @@
 
                         <p class="font-Roboto text-white text-justify text-sm mt-7">
                             Etudiant en alternance en BUT Informatique à l'Université Côte d'Azur, je me distingue par ma passion polyvalente pour le développement, les nouvelles technologies, l'entrepreneuriat et la gendarmerie.<br /><br />
-                            Actuellement engagé dans le prestigieux programme PEPITE, je façonne mon parcours au sein de la formation D2E, où j'approfondis mes connaissances en matière d'entrepreneuriat. Mon expertise s'étend du développement informatique à la création de business plans, de l'interaction avec les investisseurs à la compréhension approfondie des différents statuts juridiques.<br /><br /> 
-                            Au-delà de mon engagement dans le monde de l'entreprise, je nourris une passion inhabituelle pour la gendarmerie. Je crois fermement que les valeurs d'intégrité, de service et de responsabilité propres à la gendarmerie peuvent être intégrées dans l'écosystème entrepreneurial.
+                            Je suis actuellement membre du prestigieux programme PEPITE, où je renforce mes compétences en entrepreneuriat au sein de la formation D2E. Mon expertise s'étend du développement informatique à l'élaboration de plans d'affaires, en passant par l'interaction avec les investisseurs et la compréhension approfondie des statuts juridiques. Parallèlement à mon engagement entrepreneurial, je nourris une passion singulière pour la gendarmerie. Je crois fermement que les valeurs d'intégrité, de service et de responsabilité propres à la gendarmerie peuvent enrichir l'écosystème entrepreneurial.
                         </p>
+
+                        <div class="flex justify-between items-center mt-8">
+                            <div class="flex gap-x-6">
+                                <a href="/" target="_blank" class="relative hover:bottom-1.5">
+                                    <InstagramIcon color="white" />
+                                </a>
+
+                                <a href="/" target="_blank" class="relative hover:bottom-1.5">
+                                    <LinkedinIcon color="white" />
+                                </a>
+                                
+                                <a href="/" target="_blank" class="relative hover:bottom-1.5">
+                                    <GithubIcon color="white" />
+                                </a>
+                            </div>
+
+                            <a href="/" class="text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded">
+                                Télécharger CV
+                                <PaperIcon color="white"/>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,6 +108,11 @@
     import ArrowIcon from "./components/icons/Arrow.vue"
     import Separator from "./components/Separator.vue"
     import TitleSide from "./components/TitleSide.vue"
+    import ShootingStar from './components/ShootingStar.vue';
+    import InstagramIcon from './components/icons/Instagram.vue';
+    import LinkedinIcon from "./components/icons/Linkedin.vue"
+    import GithubIcon from "./components/icons/Github.vue"
+    import PaperIcon from "./components/icons/Paper.vue"
 
     export default {
         components: {
@@ -100,7 +123,12 @@
             Logo,
             ArrowIcon,
             Separator,
-            TitleSide
+            TitleSide,
+            ShootingStar,
+            InstagramIcon,
+            LinkedinIcon,
+            GithubIcon,
+            PaperIcon
         },
 
         data() {
@@ -118,7 +146,63 @@
              */
             togglePhoneNav : function() {
                 this.isPhoneNavDisplay = !this.isPhoneNavDisplay
-            }
+            },
+
         }
     }
 </script>
+
+<style>
+/* .test:hover {
+    box-shadow: inset 10.5em 0 0 0 white;
+    transition: ease 1s;
+} */
+
+/* .btn {
+  position: relative;
+  display: inline-block;
+  border: 2px solid transparent;
+  transition: 250ms ease-out;
+  cursor: pointer;
+}
+
+.btn span, .btn::after {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  top: -1px;
+  left: -1px;
+  background: #f5f5ff;
+}
+
+.buttonX {
+  border-color: white;
+}
+.buttonX span {
+  color: white;
+}
+.buttonX::before {
+  background: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s ease-out;
+}
+.buttonX:hover {
+  border-color: white;
+}
+.buttonX:hover span {
+  color: black;
+}
+.buttonX:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
+</style>

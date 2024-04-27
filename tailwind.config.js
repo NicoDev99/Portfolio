@@ -1,3 +1,5 @@
+import ShootingStar from '@/components/ShootingStar.vue';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -48,6 +50,10 @@ export default {
           '0%': { transform: 'translateY(-7px)' },
           '100%': { transform: 'translateY(0px)' },
         },
+        shootingStar: {
+          '0%': { transform: 'translateX(-1000px)' },
+          '100%': { transform: 'translateX(0px)' },
+        }
       },
     },
     fontFamily: {

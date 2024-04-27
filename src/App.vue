@@ -73,20 +73,20 @@
 
                         <div class="flex justify-between items-center mt-8">
                             <div class="flex gap-x-6">
-                                <a href="/" target="_blank" class="relative hover:bottom-1.5">
+                                <a href="/" target="_blank" class="hover:-translate-y-1 duration-300">
                                     <InstagramIcon color="white" />
                                 </a>
 
-                                <a href="/" target="_blank" class="relative hover:bottom-1.5">
+                                <a href="/" target="_blank" class="hover:-translate-y-1 duration-300">
                                     <LinkedinIcon color="white" />
                                 </a>
                                 
-                                <a href="/" target="_blank" class="relative hover:bottom-1.5">
+                                <a href="/" target="_blank" class="hover:-translate-y-1 duration-300">
                                     <GithubIcon color="white" />
                                 </a>
                             </div>
 
-                            <a href="/" class="text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded">
+                            <a href="/" class="text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:px-4 hover:bg-white/10 duration-500">
                                 Télécharger CV
                                 <PaperIcon color="white"/>
                             </a>

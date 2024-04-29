@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "tailwindcss-animation-delay": "^1.2.0",
     "vue": "^3.4.21"
   },

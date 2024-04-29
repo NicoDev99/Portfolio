@@ -21,3 +21,17 @@
 
 /* Zen Old Mincho */
 @import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap');
+
+/* Genos */
+@import url('https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Galindo */
+@import url('https://fonts.googleapis.com/css2?family=Galindo&display=swap');
+
+/* Zen Dots */
+@import url('https://fonts.googleapis.com/css2?family=Galindo&family=Zen+Dots&display=swap');
+
+
+*, html {
+    scroll-behavior: smooth !important;
+}

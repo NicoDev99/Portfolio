@@ -50,10 +50,6 @@ export default {
           '0%': { transform: 'translateY(-7px)' },
           '100%': { transform: 'translateY(0px)' },
         },
-        shootingStar: {
-          '0%': { transform: 'translateX(-1000px)' },
-          '100%': { transform: 'translateX(0px)' },
-        }
       },
     },
     fontFamily: {
@@ -63,10 +59,14 @@ export default {
       "Gruppo": ["Gruppo", "sans-serif"],
       "ZenTokyoZoo" : ["Zen Tokyo Zoo", "sans-serif"],
       "ZenOldMincho": ["Zen Old Mincho", "sans-serif"],
+      "Genos": ["Genos", "sans-serif"],
+      "Galindo": ["Galindo", "sans-serif"],
+      "ZenDots": ["Zen Dots", "sans-serif"],
     }
   },
   plugins: [
     require("tailwindcss-animation-delay"), // Plugin found here : https://www.npmjs.com/package/tailwindcss-animation-delay
   ],
+
 }
 

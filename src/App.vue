@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[url('./img/fond.png')] bg-fixed w-full min-h-screen h-fit bg-cover pt-10 relative">
+    <div class="bg-[url('/img/fond.png')] bg-fixed w-full min-h-screen h-fit bg-cover pt-10 relative">
 
         <!-- Computer screen nav menu -->
         <nav class="border-y borer-solid border-[#767478] mx-auto w-5/6 py-3 max-w-5xl hidden lg:flex items-center justify-center">
@@ -23,11 +23,11 @@
                 <CloseIcon width="40" height="40" color="white" class="cursor-pointer mt-12 ml-10" @click="this.togglePhoneNav()" />
                 <ul class="text-center mt-20">
                     <Logo height="60" width="60" class="block w-16 mx-auto mb-16"/>
-                    <PhoneNavLink name="Accueil" link="/" />
-                    <PhoneNavLink name="Présentation" link="#about-me" />
-                    <PhoneNavLink name="Compétences" link="#skills" />
-                    <PhoneNavLink name="Mes projets" link="#my-projects" />
-                    <PhoneNavLink name="Contact" link="#contact" />
+                    <PhoneNavLink name="Accueil" link="/" @click="this.togglePhoneNav()" />
+                    <PhoneNavLink name="Présentation" link="#about-me" @click="this.togglePhoneNav()" />
+                    <PhoneNavLink name="Compétences" link="#skills" @click="this.togglePhoneNav()" />
+                    <PhoneNavLink name="Mes projets" link="#my-projects" @click="this.togglePhoneNav()" />
+                    <PhoneNavLink name="Contact" link="#contact" @click="this.togglePhoneNav()" />
                 </ul>
             </nav>
         </div>
@@ -51,16 +51,16 @@
 
 
     <!-- Bg linear gradient -->
-    <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-auto" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
+    <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-fit" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
         
         <!-- About me -->
-        <div class="pt-20 px-10 md:px-20 pb-[600px] relative scroll-smooth" id="about-me">
+        <div class="pt-20 px-10 md:px-20 relative scroll-smooth" id="about-me">
             <h1 class="uppercase font-ZenTokyoZoo text-5xl sm:text-7xl md:text-8xl text-white leading-tight">A propos <br />de moi</h1>
-            <img src="/img/shooting_star.png" alt="Etoile filante" class="hidden xl:block w-[500px] 2xl:w-auto absolute top-24 2xl:top-20 right-20 animate-[shootingStar_1s_ease]">
+            <img src="/img/shooting_star.png" alt="Etoile filante" class="hidden xl:block w-[500px] 2xl:w-auto absolute top-24 2xl:top-20 right-20" data-aos="slide-right">
 
-            <div class="relative pb-96 xl:mx-10 2xl:mx-40">
-                <div class="xl:flex xl:gap-x-7 absolute -top-5 md:-top-10">
-                    <img src="/img/photo_profil.png" alt="Etoile filante" class="mx-auto xl:mx-0 w-64 h-64 md:w-96 md:h-96 rounded-xl animate-[transformBottomTop_1s_ease]">
+            <div class="xl:mx-10 2xl:mx-40">
+                <div class="xl:flex xl:gap-x-7 -translate-y-7 md:-top-10">
+                    <img src="/img/photo_profil.png" alt="Etoile filante" class="mx-auto xl:mx-0 w-64 h-64 md:w-96 md:h-96 rounded-xl" data-aos="zoom-in">
 
                     <div class="mx-0 sm:mx-10 lg:mx-40 xl:mx-0 mt-12 xl:mt-0">
                         <h1 class="font-ZenOldMincho text-4xl 2xl:text-5xl text-white text-center xl:text-left">Erwan Nicolas</h1>
@@ -77,21 +77,47 @@
                                     <InstagramIcon color="white" />
                                 </a>
 
-                                <a href="/" target="_blank" class="hover:-translate-y-1 duration-300">
+                                <a href="https://www.linkedin.com/in/erwan-nicolas-79729029a/" target="_blank" class="hover:-translate-y-1 duration-300">
                                     <LinkedinIcon color="white" />
                                 </a>
                                 
-                                <a href="/" target="_blank" class="hover:-translate-y-1 duration-300">
+                                <a href="https://github.com/NicoDev99" target="_blank" class="hover:-translate-y-1 duration-300">
                                     <GithubIcon color="white" />
                                 </a>
                             </div>
 
-                            <a href="/" class="mx-auto mt-12 md:mt-0 md:mx-0 w-fit text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:px-4 hover:bg-white/10 duration-500">
+                            <a href="/CV.pdf" download="CV.pdf" class="mx-auto mt-12 md:mt-0 md:mx-0 w-fit text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:px-4 hover:bg-white/10 duration-500">
                                 Télécharger CV
                                 <PaperIcon color="white"/>
                             </a>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- My course -->
+            <div class="mt-32 pb-[600px]">
+                <div>
+                    <TitleSide>
+                        <h1 class="font-ZenOldMincho text-white text-3xl">Mon parcours</h1>
+                    </TitleSide>
+
+                    <h2 class="font-Genos text-[#767478] text-center mt-6 text-lg">Passionné par le numérique depuis toujours, mon parcours témoigne de cette passion <br />
+                        pour la technologie, une histoire qui ne cesse de s'enrichir.</h2>
+                </div>
+
+                <div>
+                    <Satellite width="200" height="200" color="white" class="-rotate-[84deg]"/>
+
+                    <CourseElement>
+                        <div class="text-white">
+                            <div class="flex justify-between">
+                                <h1 class="font-ZenDots">Fondateur - CEO</h1>
+                                <p class="text-[#BDBDBD] text-sm">juin 2023 - Aujourd’hui</p>
+                            </div>
+                            <p></p>
+                        </div>
+                    </CourseElement>
                 </div>
             </div>
         </div>
@@ -100,6 +126,9 @@
 
 
 <script>
+    import AOS from 'aos';
+    import 'aos/dist/aos.css'
+
     import BurgerIcon from './components/icons/Burger.vue'
     import CompNavLink from "./components/ComputerNavLink.vue"
     import PhoneNavLink from "./components/PhoneNavLink.vue"
@@ -112,6 +141,8 @@
     import LinkedinIcon from "./components/icons/Linkedin.vue"
     import GithubIcon from "./components/icons/Github.vue"
     import PaperIcon from "./components/icons/Paper.vue"
+    import Satellite from './components/icons/Satellite.vue';
+    import CourseElement from "./components/CourseElement.vue"
 
     export default {
         components: {
@@ -126,7 +157,15 @@
             InstagramIcon,
             LinkedinIcon,
             GithubIcon,
-            PaperIcon
+            PaperIcon,
+            Satellite,
+            CourseElement
+        },
+
+        setup() {
+            AOS.init({
+                once: true
+            });
         },
 
         data() {

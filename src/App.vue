@@ -54,25 +54,25 @@
     <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-auto" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
         
         <!-- About me -->
-        <div class="pt-20 px-20 pb-[600px] relative" id="about-me">
-            <h1 class="uppercase font-ZenTokyoZoo text-8xl text-white leading-tight">A propos <br />de moi</h1>
-            <img src="/img/shooting_star.png" alt="Etoile filante" class="hidden xl:block absolute top-20 right-20 animate-[shootingStar_1s_ease]">
+        <div class="pt-20 px-10 md:px-20 pb-[600px] relative scroll-smooth" id="about-me">
+            <h1 class="uppercase font-ZenTokyoZoo text-5xl sm:text-7xl md:text-8xl text-white leading-tight">A propos <br />de moi</h1>
+            <img src="/img/shooting_star.png" alt="Etoile filante" class="hidden xl:block w-[500px] 2xl:w-auto absolute top-24 2xl:top-20 right-20 animate-[shootingStar_1s_ease]">
 
-            <div class="relative pb-96 mx-40">
-                <div class="flex gap-x-7 absolute -top-10">
-                    <img src="/img/photo_profil.png" alt="Etoile filante" class="w-96 h-96 rounded-xl">
+            <div class="relative pb-96 xl:mx-10 2xl:mx-40">
+                <div class="xl:flex xl:gap-x-7 absolute -top-5 md:-top-10">
+                    <img src="/img/photo_profil.png" alt="Etoile filante" class="mx-auto xl:mx-0 w-64 h-64 md:w-96 md:h-96 rounded-xl animate-[transformBottomTop_1s_ease]">
 
-                    <div>
-                        <h1 class="font-ZenOldMincho text-6xl text-white">Erwan Nicolas</h1>
-                        <h2 class="text-white font-Gruppo mt-3 text-2xl">Développeur Web Full-Stack</h2>
+                    <div class="mx-0 sm:mx-10 lg:mx-40 xl:mx-0 mt-12 xl:mt-0">
+                        <h1 class="font-ZenOldMincho text-4xl 2xl:text-5xl text-white text-center xl:text-left">Erwan Nicolas</h1>
+                        <h2 class="text-white font-Gruppo mt-3 text-xl 2xl:text-2xl text-center xl:text-left">Développeur Web Full-Stack</h2>
 
-                        <p class="font-Roboto text-white text-justify text-sm mt-7">
+                        <p class="font-Roboto text-white text-justify text-xs md:text-sm mt-7">
                             Etudiant en alternance en BUT Informatique à l'Université Côte d'Azur, je me distingue par ma passion polyvalente pour le développement, les nouvelles technologies, l'entrepreneuriat et la gendarmerie.<br /><br />
                             Je suis actuellement membre du prestigieux programme PEPITE, où je renforce mes compétences en entrepreneuriat au sein de la formation D2E. Mon expertise s'étend du développement informatique à l'élaboration de plans d'affaires, en passant par l'interaction avec les investisseurs et la compréhension approfondie des statuts juridiques. Parallèlement à mon engagement entrepreneurial, je nourris une passion singulière pour la gendarmerie. Je crois fermement que les valeurs d'intégrité, de service et de responsabilité propres à la gendarmerie peuvent enrichir l'écosystème entrepreneurial.
                         </p>
 
-                        <div class="flex justify-between items-center mt-8">
-                            <div class="flex gap-x-6">
+                        <div class="md:flex md:justify-between md:items-center mt-8">
+                            <div class="flex gap-x-6 justify-center md:justify-normal">
                                 <a href="/" target="_blank" class="hover:-translate-y-1 duration-300">
                                     <InstagramIcon color="white" />
                                 </a>
@@ -86,7 +86,7 @@
                                 </a>
                             </div>
 
-                            <a href="/" class="text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:px-4 hover:bg-white/10 duration-500">
+                            <a href="/" class="mx-auto mt-12 md:mt-0 md:mx-0 w-fit text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:px-4 hover:bg-white/10 duration-500">
                                 Télécharger CV
                                 <PaperIcon color="white"/>
                             </a>
@@ -108,7 +108,6 @@
     import ArrowIcon from "./components/icons/Arrow.vue"
     import Separator from "./components/Separator.vue"
     import TitleSide from "./components/TitleSide.vue"
-    import ShootingStar from './components/ShootingStar.vue';
     import InstagramIcon from './components/icons/Instagram.vue';
     import LinkedinIcon from "./components/icons/Linkedin.vue"
     import GithubIcon from "./components/icons/Github.vue"
@@ -124,7 +123,6 @@
             ArrowIcon,
             Separator,
             TitleSide,
-            ShootingStar,
             InstagramIcon,
             LinkedinIcon,
             GithubIcon,

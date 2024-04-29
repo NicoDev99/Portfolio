@@ -62,6 +62,7 @@ export default {
       "Genos": ["Genos", "sans-serif"],
       "Galindo": ["Galindo", "sans-serif"],
       "ZenDots": ["Zen Dots", "sans-serif"],
+      "YujiSyuku" : ["Yuji Syuku", "sans-serif"]
     }
   },
   plugins: [

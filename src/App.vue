@@ -102,22 +102,59 @@
                         <h1 class="font-ZenOldMincho text-white text-3xl">Mon parcours</h1>
                     </TitleSide>
 
-                    <h2 class="font-Genos text-[#767478] text-center mt-6 text-lg">Passionné par le numérique depuis toujours, mon parcours témoigne de cette passion <br />
+                    <h2 class="font-Genos text-[#767478] max-w-xl mx-auto text-center mt-6 text-xs lg:text-lg">Passionné par le numérique depuis toujours, mon parcours témoigne de cette passion
                         pour la technologie, une histoire qui ne cesse de s'enrichir.</h2>
                 </div>
 
-                <div>
-                    <Satellite width="200" height="200" color="white" class="-rotate-[84deg]"/>
+                <div class="w-fit mx-auto relative">
+                    <Satellite width="200" height="200" color="white" class="-rotate-90 hidden xl:block translate-x-20 translate-y-10"/>
 
-                    <CourseElement>
-                        <div class="text-white">
-                            <div class="flex justify-between">
-                                <h1 class="font-ZenDots">Fondateur - CEO</h1>
-                                <p class="text-[#BDBDBD] text-sm">juin 2023 - Aujourd’hui</p>
+                    <ExperienceElement number="1" orientation="left" class="translate-x-0 xl:translate-x-48 2xl:translate-x-64 mb-40 xl:mb-0 mt-24 xl:mt-0">
+                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-right">
+                            <div class="flex justify-between items-center mb-3">
+                                <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Fondateur - CEO</h1>
+                                <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">juin 2023 - Aujourd’hui</p>
                             </div>
-                            <p></p>
+                            <p class="text-justify font-Roboto text-sm lg:text-base">Après avoir passé plusieurs années à travailler en tant qu'indépendant, j'ai pris la décision de lancer ma propre entreprise. 
+                                Mon objectif est de donner vie à mes projets tout en collaborant avec d'autres entreprises, en leur proposant mes services pour 
+                                la conception et le développement de solutions informatiques sur mesure.</p>
                         </div>
-                    </CourseElement>
+                    </ExperienceElement>
+
+                    <ExperienceElement number="2" orientation="right" class="translate-x-0 xl:-translate-x-52 2xl:-translate-x-64 mt-10 mb-40 xl:mb-0">
+                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-left">
+                            <div class="flex justify-between items-center mb-3">
+                                <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Développeur Web Full Stack</h1>
+                                <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">oct. 2022 - Aujourd’hui</p>
+                            </div>
+                            <p class="text-justify font-Roboto text-sm lg:text-base">J'ai rejoint l'équipe d'INOCESS en alternance dans le but de contribuer à la création, la conception, le développement et 
+                                la mise en œuvre d'une solution informatique permettant la visualisation de données sous diverses formes telles que des graphiques, des graphes et des matrices. </p>
+                        </div>
+                    </ExperienceElement>
+
+                    <ExperienceElement number="3" orientation="left" class="translate-x-0 xl:translate-x-48 2xl:translate-x-64 mt-10 mb-40 xl:mb-0">
+                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-right">
+                            <div class="flex justify-between items-center mb-3">
+                                <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Etudes Supérieures</h1>
+                                <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">sept. 2022 - Aujourd’hui</p>
+                            </div>
+                            <p class="text-justify font-Roboto text-sm lg:text-base">Après l'obtention de mon baccalauréat, j'ai rejoint le Bachelor Universitaire de Technologie (BUT) à l'IUT de Nice, 
+                                sur le campus de Sophia Antipolis, dans le but d'approfondir mes compétences en informatique. Actuellement en deuxième année de BUT, cette 
+                                formation m'a permis de faire des avancées significatives dans ce domaine aussi vaste que complexe</p>
+                        </div>
+                    </ExperienceElement>
+
+                    <ExperienceElement number="4" orientation="right" class="translate-x-0 xl:-translate-x-52 2xl:-translate-x-64 mt-10 mb-40 xl:mb-0">
+                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-left">
+                            <div class="flex justify-between items-center mb-3">
+                                <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Années lycées</h1>
+                                <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">2019 - 2022</p>
+                            </div>
+                            <p class="text-justify font-Roboto text-sm lg:text-base">Passage du baccalauréat spécialités mathématique et informatique avec option mathématique experte en terminal</p>
+                        </div>
+                    </ExperienceElement>
+
+                    <SatelliteDish width="175" height="175" color="white" class="-rotate-90 absolute right-24 hidden xl:block"/>
                 </div>
             </div>
         </div>
@@ -142,7 +179,8 @@
     import GithubIcon from "./components/icons/Github.vue"
     import PaperIcon from "./components/icons/Paper.vue"
     import Satellite from './components/icons/Satellite.vue';
-    import CourseElement from "./components/CourseElement.vue"
+    import ExperienceElement from "./components/ExperienceElement.vue"
+    import SatelliteDish from './components/icons/SatelliteDish.vue';
 
     export default {
         components: {
@@ -159,7 +197,8 @@
             GithubIcon,
             PaperIcon,
             Satellite,
-            CourseElement
+            ExperienceElement,
+            SatelliteDish
         },
 
         setup() {

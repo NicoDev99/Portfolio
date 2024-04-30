@@ -66,7 +66,10 @@ export default {
       "RobotoFlex" : ["Roboto Flex", "sans-serif"],
       "Galada" : ["Galada", "sans-serif"],
       "SquadaOne" : ["Squada One", "sans-serif"],
-      "SplineSans" : ["Spline Sans", "sans-serif"]
+      "SplineSans" : ["Spline Sans", "sans-serif"],
+      "VollkornSC" : ["Vollkorn SC", "sans-serif"],
+      "Trykker" : ["Trykker", "sans-serif"],
+      "RedHatText" : ["Red Hat Text", "sans-serif"],
     }
   },
   plugins: [

@@ -52,13 +52,14 @@
 
     <!-- Bg linear gradient -->
     <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-fit relative" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
-        
-        <RoundWhiteBlur class="absolute top-[400px]"/>
-        <RoundWhiteBlur class="absolute top-[700px] right-0"/>
-        <RoundWhiteBlur class="absolute top-[2100px]"/>
 
         <!-- About me -->
-        <div class="pt-20 px-10 md:px-20 relative scroll-smooth" id="about-me">
+        <div class="pt-20 px-10 md:px-20 relative scroll-smooth max-w-[1920px] w-fit mx-auto" id="about-me">
+
+            <RoundWhiteBlur class="absolute top-[400px]"/>
+            <RoundWhiteBlur class="absolute top-[700px] right-0"/>
+            <RoundWhiteBlur class="absolute top-[2100px]"/>
+
             <h1 class="uppercase font-ZenTokyoZoo text-5xl sm:text-7xl md:text-8xl text-white leading-tight">A propos <br />de moi</h1>
             <img src="/img/shooting_star.png" alt="Etoile filante" class="hidden xl:block w-[500px] 2xl:w-auto absolute top-24 2xl:top-20 right-20" data-aos="slide-right">
 
@@ -168,7 +169,7 @@
 
 
         <!-- Skills -->
-        <div class="mt-44 md:mt-96 mx-10 relative" id="skills">
+        <div class="mt-44 md:mt-96 mx-10 relative max-w-[1920px] lg:mx-auto" id="skills">
 
             <RoundWhiteBlur class="absolute top-[700px] right-0"/>
 
@@ -204,21 +205,12 @@
 
         
         <!-- Projects -->
-        <div class="mt-36 pb-[600px] mx-10" id="projects">
+        <div class="mt-36 mx-10" id="projects">
             <div class="w-fit mx-auto text-center">
                 <h2 class="text-[#767478] text-xl font-Galada">Quelques projets récents</h2>
-
-                <div class="flex items-center mt-3">
-                    <div class="hidden lg:block" data-aos="fade-left">
-                        <img src="/img/little_shooting_star.png" alt="Little Shooting Star" class="rotate-180">
-                    </div>
-                    
-                    <h1 class="uppercase text-white text-center font-Syncopate text-4xl font-bold mx-10">Mes projets</h1>
-
-                    <div class="hidden lg:block" data-aos="fade-right">
-                        <img src="/img/little_shooting_star.png" alt="Little Shooting Star">
-                    </div>
-                </div>
+                <TiitleShootingSide>
+                    <h1 class="uppercase text-white text-center font-Syncopate text-4xl font-bold">Mes projets</h1>
+                </TiitleShootingSide>
             </div>
 
 
@@ -263,6 +255,59 @@
                 </div>
             </div>
         </div>
+
+        <!-- Contact -->
+        <div class="mt-64 pb-[600px] relative max-w-[1920px] mx-auto" id="contact">
+
+            <!-- Shooting stars -->
+            <div class="hidden 2xl:block absolute top-10 left-0">
+                <ShootingStar class="absolute top-5 left-56" data-aos-delay="100"/>
+                <ShootingStar class="absolute -top-7 left-20" data-aos-delay="150" />
+                <ShootingStar class="absolute top-16 left-28" data-aos-delay="200"/>
+                <ShootingStar class="absolute top-10 -left-5" data-aos-delay="300" />
+                <ShootingStar class="absolute top-28 left-5" data-aos-delay="350"/>
+                <ShootingStar class="absolute top-48 left-20" data-aos-delay="250"/>
+                <ShootingStar class="absolute top-48 -left-5" data-aos-delay="400"/>
+            </div>
+
+            <div class="w-fit mx-auto">
+                <h2 class="font-VollkornSC text-[#767478] text-center mx-10 md:mx-0 text-sm md:text-xl">Vous avez une question ou bien une remarque ? Alors ...</h2>
+                <h1 class="font-Trykker text-white text-center text-xl md:text-5xl uppercase mt-5">Contactez-moi</h1>
+                <Separator class="mx-auto mt-10" data-aos="fade-up"/>
+            </div>
+
+            <p class="font-RedHatText text-white font-light text-center max-w-2xl break-normal mt-16 text-sm md:text-base mx-10 md:mx-auto">N'hésitez pas à m'envoyer un message ou à me contacter sur mes différents
+                réseaux sociaux, je serai ravi de vous répondre</p>
+
+            <div class="max-w-3xl mx-10 md:mx-auto mt-10">
+
+                <div class="w-full relative">
+                    <input type="email" class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full relative z-0" id="email" v-model="this.email">
+                    <label for="email" class="font-Roboto text-white absolute transition-all ease z-10" :class="this.email == '' ? 'top-3 left-5' : '-top-7 left-0'">Email</label>
+                </div>
+
+                <div class="w-full relative mt-12">
+                    <input type="text" class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full relative z-0" id="subject" v-model="this.subject">
+                    <label for="subject" class="font-Roboto text-white absolute transition-all ease z-10" :class="this.subject == '' ? 'top-3 left-5' : '-top-7 left-0'">Sujet</label>
+                </div>
+
+                <div class="w-full relative mt-12">
+                    <textarea class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full mt-10 min-h-72 z-0" id="message" v-model="this.message"></textarea>
+                    <label for="message" class="font-Roboto text-white absolute transition-all ease z-10" :class="this.message == '' ? 'top-3 left-5' : '-top-7 left-0'">Message</label>
+                </div>
+
+                <label for="readCGU" class="text-white font-Roboto font-light mt-8 flex gap-x-3 items-center text-xs md:text-base">
+                    <input type="checkbox" class="hidden" id="readCGU">
+                    <div class="border border-solid border-white rounded w-4 md:w-5 h-4 md:h-5"></div>
+                    <p>J'ai lu et j'accepte les <a href="" class="underline">Conditions Générales d'Utilisation</a></p>
+                </label>
+
+                <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500">
+                    Envoyer
+                    <SendIcon color="white"/>
+                </button>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -290,6 +335,9 @@
     import ProgressBar from './components/ProgressBar.vue';
     import LinearProgressBar from './components/LinearProgressBar.vue';
     import ProjectCard from './components/ProjectCard.vue';
+    import SendIcon from "./components/icons/Send.vue"
+    import ShootingStar from './components/ShootingStar.vue';
+    import TitleShootingSide from './components/TitleShootingSide.vue';
 
     export default {
         components: {
@@ -311,7 +359,10 @@
             RoundWhiteBlur,
             ProgressBar,
             LinearProgressBar,
-            ProjectCard
+            ProjectCard,
+            SendIcon,
+            ShootingStar,
+            TitleShootingSide
         },
 
         setup() {
@@ -323,6 +374,11 @@
         data() {
             return {
                 isPhoneNavDisplay: false,
+
+                // Form
+                email: "",
+                subject: "",
+                message: ""
             }
         },
 
@@ -340,3 +396,19 @@
         }
     }
 </script>
+
+<style scoped>
+    input:focus + label {
+        top: -28px;
+        left: 0px;
+    }
+
+    textarea:focus + label {
+        top: -28px;
+        left: 0px;
+    }
+
+    input[type="checkbox"]:checked + div {
+        background-color: white;
+    }
+</style>

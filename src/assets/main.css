@@ -34,6 +34,18 @@
 /* Yuji Syuku */
 @import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
 
+/* Syncopate */
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap');
+
+/* Sura */
+@import url('https://fonts.googleapis.com/css2?family=Sura:wght@400;700&display=swap');
+
+/* Roboto Flex */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* Galada */
+@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+
 
 *, html {
     scroll-behavior: smooth !important;

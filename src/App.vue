@@ -51,8 +51,12 @@
 
 
     <!-- Bg linear gradient -->
-    <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-fit" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
+    <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-fit relative" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
         
+        <RoundWhiteBlur class="absolute top-[400px]"/>
+        <RoundWhiteBlur class="absolute top-[700px] right-0"/>
+        <RoundWhiteBlur class="absolute top-[2100px]"/>
+
         <!-- About me -->
         <div class="pt-20 px-10 md:px-20 relative scroll-smooth" id="about-me">
             <h1 class="uppercase font-ZenTokyoZoo text-5xl sm:text-7xl md:text-8xl text-white leading-tight">A propos <br />de moi</h1>
@@ -86,7 +90,7 @@
                                 </a>
                             </div>
 
-                            <a href="/CV.pdf" download="CV.pdf" class="mx-auto mt-12 md:mt-0 md:mx-0 w-fit text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:px-4 hover:bg-white/10 duration-500">
+                            <a href="/CV.pdf" download="CV.pdf" class="mx-auto mt-12 md:mt-0 md:mx-0 w-fit text-white cursor-pointer flex gap-x-2 border border-solid border-white px-3 py-2.5 rounded hover:bg-white/10 duration-500">
                                 Télécharger CV
                                 <PaperIcon color="white"/>
                             </a>
@@ -96,7 +100,7 @@
             </div>
             
             <!-- My course -->
-            <div class="mt-32 pb-[600px]">
+            <div class="mt-32">
                 <div>
                     <TitleSide>
                         <h1 class="font-ZenOldMincho text-white text-3xl">Mon parcours</h1>
@@ -124,6 +128,19 @@
                     <ExperienceElement number="2" orientation="right" class="translate-x-0 xl:-translate-x-52 2xl:-translate-x-64 mt-10 mb-40 xl:mb-0">
                         <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-left">
                             <div class="flex justify-between items-center mb-3">
+                                <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Etudes entrepreneurials</h1>
+                                <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">fev. 2024 - Aujourd’hui</p>
+                            </div>
+                            <p class="text-justify font-Roboto text-sm lg:text-base">Dans le cadre du programme PEPITE, j'ai rejoint la formation D2E pour approfondir mes compétences 
+                                dans le domaine de l'entrepreneuriat et de la gestion de projet. Cette formation m'offre l'opportunité d'explorer en profondeur divers aspects 
+                                tels que l'élaboration de plans d'affaires, les interactions avec les investisseurs, les aspects juridiques incluant les différents statuts 
+                                possibles pour les entreprises, ainsi que les études de marché.</p>
+                        </div>
+                    </ExperienceElement>
+
+                    <ExperienceElement number="3" orientation="left" class="translate-x-0 xl:translate-x-48 2xl:translate-x-64 mt-10 mb-40 xl:mb-0">
+                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-right">
+                            <div class="flex justify-between items-center mb-3">
                                 <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Développeur Web Full Stack</h1>
                                 <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">oct. 2022 - Aujourd’hui</p>
                             </div>
@@ -132,8 +149,8 @@
                         </div>
                     </ExperienceElement>
 
-                    <ExperienceElement number="3" orientation="left" class="translate-x-0 xl:translate-x-48 2xl:translate-x-64 mt-10 mb-40 xl:mb-0">
-                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-right">
+                    <ExperienceElement number="4" orientation="right" class="translate-x-0 xl:-translate-x-52 2xl:-translate-x-64 mt-10 mb-40 xl:mb-0">
+                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-left">
                             <div class="flex justify-between items-center mb-3">
                                 <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Etudes Supérieures</h1>
                                 <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">sept. 2022 - Aujourd’hui</p>
@@ -144,18 +161,39 @@
                         </div>
                     </ExperienceElement>
 
-                    <ExperienceElement number="4" orientation="right" class="translate-x-0 xl:-translate-x-52 2xl:-translate-x-64 mt-10 mb-40 xl:mb-0">
-                        <div class="text-white w-full max-w-lg 2xl:max-w-xl" data-aos="fade-left">
-                            <div class="flex justify-between items-center mb-3">
-                                <h1 class="font-ZenDots text-sm lg:text-lg 2xl:text-xl">Années lycées</h1>
-                                <p class="text-[#BDBDBD] text-xs 2xl:text-sm font-YujiSyuku text-right">2019 - 2022</p>
-                            </div>
-                            <p class="text-justify font-Roboto text-sm lg:text-base">Passage du baccalauréat spécialités mathématique et informatique avec option mathématique experte en terminal</p>
-                        </div>
-                    </ExperienceElement>
-
                     <SatelliteDish width="175" height="175" color="white" class="-rotate-90 absolute right-24 hidden xl:block"/>
                 </div>
+            </div>
+        </div>
+
+
+        <!-- Skills -->
+        <div class="mt-44 md:mt-96 pb-[600px] mx-10 relative" id="skills">
+
+            <RoundWhiteBlur class="absolute top-[700px] right-0"/>
+
+            <div class="w-fit mx-auto" >
+                <Separator class="mx-auto mb-10" data-aos="zoom-in" data-aos-easing="linear"/>
+                <h1 class="font-Syncopate text-white text-center text-2xl sm:text-4xl">Mes compétences</h1>
+                <h2 class="font-Genos text-[#767478] max-w-xl mx-14 md:mx-auto text-center mt-6 text-xs lg:text-lg">Au file des années j'ai acquis une grande expérience dans différents langages qui ne cessent encore de me surprendre aujourd'hui par leurs nouveautés</h2>
+            </div>
+
+            <div class="md:columns-2 mx-0 lg:mx-20 2xl:mx-64 md:gap-x-14 lg:gap-x-28 mt-20">
+                <LinearProgressBar firstColor="#F16529" endColor="#2965F1" progress="90" name="HTML/CSS"/>
+                <ProgressBar color="#CF649B" progress="70" name="SASS/SCSS" class="mt-12" />
+                <ProgressBar color="#4DB0B4" progress="90" name="TailWindCSS" class="mt-12" />
+                <ProgressBar color="#FFD93D" progress="70" name="JavaScript" class="mt-12" />
+                <ProgressBar color="#A259FF" progress="70" name="Figma" class="mt-12" />
+                <ProgressBar color="#8993C1" progress="90" name="PHP" class="mt-12 lg:mt-0" />
+                <ProgressBar color="#339ADB" progress="70" name="MySQL" class="mt-12" />
+                <LinearProgressBar firstColor="#FE2C21" endColor="#63B586" progress="70" name="Laravel/VueJS" class="mt-12"/>
+                <ProgressBar color="#FE767A" progress="50" name="ChartJS" class="mt-12" />
+                <ProgressBar color="#A3EDBA" progress="50" name="Highcharts" class="mt-12" />
+            </div>
+
+            <div class="flex items-center mt-24">
+                <Satellite width="125" height="125" color="rgba(255, 255, 255, 0.5)" class="-rotate-[135deg] hidden md:block"/>
+                <p class="text-white/50 font-RobotoFlex text-sm lg:text-base text-center md:text-left">Mes compétences sont basées sur mon expérience professionnelle et sur les différents projets sur lesquels j’ai pu travailler</p>
             </div>
         </div>
     </div>
@@ -181,6 +219,9 @@
     import Satellite from './components/icons/Satellite.vue';
     import ExperienceElement from "./components/ExperienceElement.vue"
     import SatelliteDish from './components/icons/SatelliteDish.vue';
+    import RoundWhiteBlur from './components/RoundWhiteBlur.vue';
+    import ProgressBar from './components/ProgressBar.vue';
+    import LinearProgressBar from './components/LinearProgressBar.vue';
 
     export default {
         components: {
@@ -198,7 +239,10 @@
             PaperIcon,
             Satellite,
             ExperienceElement,
-            SatelliteDish
+            SatelliteDish,
+            RoundWhiteBlur,
+            ProgressBar,
+            LinearProgressBar
         },
 
         setup() {

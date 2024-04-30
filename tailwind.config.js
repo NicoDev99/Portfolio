@@ -60,7 +60,11 @@ export default {
       "Genos": ["Genos", "sans-serif"],
       "Galindo": ["Galindo", "sans-serif"],
       "ZenDots": ["Zen Dots", "sans-serif"],
-      "YujiSyuku" : ["Yuji Syuku", "sans-serif"]
+      "YujiSyuku" : ["Yuji Syuku", "sans-serif"],
+      "Syncopate" : ["Syncopate", "sans-serif"],
+      "Sura" : ["Sura", "sans-serif"],
+      "RobotoFlex" : ["Roboto Flex", "sans-serif"],
+      "Galada" : ["Galada", "sans-serif"]
     }
   },
   plugins: [

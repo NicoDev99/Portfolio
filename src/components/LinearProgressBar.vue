@@ -4,8 +4,8 @@
             <p class="font-Sura">{{ this.name }}</p>
             <p class="font-RobotoFlex">{{ this.progress }}%</p>
         </div>
-        <div class="bg-white rounded h-3 overflow-hidden">
-            <div class="h-3 rounded-s" :style="'background: linear-gradient(to right, '+ this.firstColor +', '+ this.endColor +'); width: ' + this.progress + '%;'" data-aos="fade-right" data-aos-duration="1000"></div>
+        <div class="bg-white rounded-2xl h-3 overflow-hidden">
+            <div class="h-3 rounded-2xl" :style="'background: linear-gradient(to right, '+ this.firstColor +', '+ this.endColor +'80); width: ' + this.progress + '%;'" data-aos="fade-right" data-aos-duration="1000"></div>
         </div>
     </div>
 </template>

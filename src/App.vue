@@ -178,17 +178,22 @@
                 <h2 class="font-Genos text-[#767478] max-w-xl mx-14 md:mx-auto text-center mt-6 text-xs lg:text-lg">Au file des années j'ai acquis une grande expérience dans différents langages qui ne cessent encore de me surprendre aujourd'hui par leurs nouveautés</h2>
             </div>
 
-            <div class="md:columns-2 mx-0 lg:mx-20 2xl:mx-64 md:gap-x-14 lg:gap-x-28 mt-20">
-                <LinearProgressBar firstColor="#F16529" endColor="#2965F1" progress="90" name="HTML/CSS"/>
-                <ProgressBar color="#CF649B" progress="70" name="SASS/SCSS" class="mt-12" />
-                <ProgressBar color="#4DB0B4" progress="90" name="TailWindCSS" class="mt-12" />
-                <ProgressBar color="#FFD93D" progress="70" name="JavaScript" class="mt-12" />
-                <ProgressBar color="#A259FF" progress="70" name="Figma" class="mt-12" />
-                <ProgressBar color="#8993C1" progress="90" name="PHP" class="mt-12 lg:mt-0" />
-                <ProgressBar color="#339ADB" progress="70" name="MySQL" class="mt-12" />
-                <LinearProgressBar firstColor="#FE2C21" endColor="#63B586" progress="70" name="Laravel/VueJS" class="mt-12"/>
-                <ProgressBar color="#FE767A" progress="50" name="ChartJS" class="mt-12" />
-                <ProgressBar color="#A3EDBA" progress="50" name="Highcharts" class="mt-12" />
+            <div class="md:grid md:grid-cols-2 mx-0 lg:mx-20 2xl:mx-64 md:gap-x-14 lg:gap-x-28 mt-10">
+                <LinearProgressBar firstColor="#F16529" endColor="#2965F1" progress="90" name="HTML / CSS" class="mt-16"/>
+                <ProgressBar color="#8993C1" progress="90" name="PHP" class="mt-16" />
+                <ProgressBar color="#CF649B" progress="70" name="SASS / SCSS" class="mt-16" />
+                <ProgressBar color="#339ADB" progress="80" name="SQL" class="mt-16" />
+                <ProgressBar color="#4DB0B4" progress="90" name="TailWindCSS" class="mt-16" />
+                <LinearProgressBar firstColor="#D10A77" endColor="#9E28F8" progress="50" name="InfluxDB" class="mt-16"/>
+                <ProgressBar color="#FCD329" progress="70" name="JavaScript" class="mt-16" />
+                <LinearProgressBar firstColor="#FE2C21" endColor="#63B586" progress="70" name="Laravel / VueJS" class="mt-16"/>
+                <ProgressBar color="#FE767A" progress="50" name="ChartJS" class="mt-16" />
+                <ProgressBar color="#A3EDBA" progress="50" name="Highcharts" class="mt-16" />
+                <ProgressBar color="#AF1F1F" progress="70" name="Java" class="mt-16" />
+                <LinearProgressBar firstColor="#FFDF58" endColor="#3573A4" progress="70" name="Python" class="mt-16"/>
+                <LinearProgressBar firstColor="#9D68AB" endColor="#5571B5" progress="50" name="Git / GitHub" class="mt-16"/>
+                <LinearProgressBar firstColor="#809DC9" endColor="#B32024" progress="70" name="SVN / Redmine" class="mt-16"/>
+                <ProgressBar color="#A259FF" progress="80" name="Figma" class="mt-16" />
             </div>
 
             <div class="flex items-center mt-24">
@@ -228,10 +233,10 @@
                     <!-- Carousel Buttons -->
                     <div class="flex gap-x-5 absolute lg:right-0 -top-16">
                         <div class="bg-[#1E1E1E]/50 w-10 h-10 relative cursor-not-allowed">
-                            <ArrowIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90"/>
+                            <ArrowIcon color="rgba(255, 255, 255, 0.5)" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90"/>
                         </div>
                         <div class="bg-[#1E1E1E]/50 w-10 h-10 relative cursor-not-allowed">
-                            <ArrowIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90"/>
+                            <ArrowIcon color="rgba(255, 255, 255, 0.5)" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90"/>
                         </div>
                     </div>
 

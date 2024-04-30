@@ -8,7 +8,7 @@
                 <CompNavLink name="Accueil" link="/" number="01" />
                 <CompNavLink name="Présentation" link="#about-me" number="02" />
                 <CompNavLink name="Compétences" link="#skills" number="03" />
-                <CompNavLink name="Mes projets" link="#my-projects" number="04" />
+                <CompNavLink name="Mes projets" link="#projects" number="04" />
                 <CompNavLink name="Contact" link="#contact" number="05" />
             </ul>
         </nav>
@@ -26,7 +26,7 @@
                     <PhoneNavLink name="Accueil" link="/" @click="this.togglePhoneNav()" />
                     <PhoneNavLink name="Présentation" link="#about-me" @click="this.togglePhoneNav()" />
                     <PhoneNavLink name="Compétences" link="#skills" @click="this.togglePhoneNav()" />
-                    <PhoneNavLink name="Mes projets" link="#my-projects" @click="this.togglePhoneNav()" />
+                    <PhoneNavLink name="Mes projets" link="#projects" @click="this.togglePhoneNav()" />
                     <PhoneNavLink name="Contact" link="#contact" @click="this.togglePhoneNav()" />
                 </ul>
             </nav>
@@ -168,7 +168,7 @@
 
 
         <!-- Skills -->
-        <div class="mt-44 md:mt-96 pb-[600px] mx-10 relative" id="skills">
+        <div class="mt-44 md:mt-96 mx-10 relative" id="skills">
 
             <RoundWhiteBlur class="absolute top-[700px] right-0"/>
 
@@ -194,6 +194,68 @@
             <div class="flex items-center mt-24">
                 <Satellite width="125" height="125" color="rgba(255, 255, 255, 0.5)" class="-rotate-[135deg] hidden md:block"/>
                 <p class="text-white/50 font-RobotoFlex text-sm lg:text-base text-center md:text-left">Mes compétences sont basées sur mon expérience professionnelle et sur les différents projets sur lesquels j’ai pu travailler</p>
+            </div>
+        </div>
+
+        
+        <!-- Projects -->
+        <div class="mt-36 pb-[600px] mx-10" id="projects">
+            <div class="w-fit mx-auto text-center">
+                <h2 class="text-[#767478] text-xl font-Galada">Quelques projets récents</h2>
+
+                <div class="flex items-center mt-3">
+                    <div class="hidden lg:block" data-aos="fade-left">
+                        <img src="/img/little_shooting_star.png" alt="Little Shooting Star" class="rotate-180">
+                    </div>
+                    
+                    <h1 class="uppercase text-white text-center font-Syncopate text-4xl font-bold mx-10">Mes projets</h1>
+
+                    <div class="hidden lg:block" data-aos="fade-right">
+                        <img src="/img/little_shooting_star.png" alt="Little Shooting Star">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="relative mt-16">
+
+                <!-- BLur white round -->
+                <div class="hidden lg:block w-[500px] h-[500px] bg-white/40 blur-[700px] rounded-full absolute left-1/2 -translate-x-1/2 z-0"></div>
+
+
+                <div class="flex flex-col lg:flex-row items-center lg:justify-between gap-y-16 lg:gap-y-0 lg:gap-x-10 relative max-w-screen-2xl w-full lg:w-fit mx-auto mt-24 lg:mt-0">
+
+                    <!-- Carousel Buttons -->
+                    <div class="flex gap-x-5 absolute lg:right-0 -top-16">
+                        <div class="bg-[#1E1E1E]/50 w-10 h-10 relative cursor-not-allowed">
+                            <ArrowIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90"/>
+                        </div>
+                        <div class="bg-[#1E1E1E]/50 w-10 h-10 relative cursor-not-allowed">
+                            <ArrowIcon color="white" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90"/>
+                        </div>
+                    </div>
+
+                    <ProjectCard class="">
+                        <div class="mx-auto text-white py-12 px-10">
+                            <h1 class="font-SquadaOne text-center text-3xl">Pas encore de projets</h1>
+                            <h3 class="font-SplineSans text-center text-sm pt-3">Cependant, gardez l'œil ouvert, ça ne va pas tarder.</h3>
+                        </div>
+                    </ProjectCard>
+
+                    <ProjectCard>
+                        <div class="mx-auto text-white py-12 px-10">
+                            <h1 class="font-SquadaOne text-center text-3xl">Pas encore de projets</h1>
+                            <h3 class="font-SplineSans text-center text-sm pt-3">Cependant, gardez l'œil ouvert, ça ne va pas tarder.</h3>
+                        </div>
+                    </ProjectCard>
+                    
+                    <ProjectCard>
+                        <div class="mx-auto text-white py-12 px-10">
+                            <h1 class="font-SquadaOne text-center text-3xl">Pas encore de projets</h1>
+                            <h3 class="font-SplineSans text-center text-sm pt-3">Cependant, gardez l'œil ouvert, ça ne va pas tarder.</h3>
+                        </div>
+                    </ProjectCard>
+                </div>
             </div>
         </div>
     </div>
@@ -222,6 +284,7 @@
     import RoundWhiteBlur from './components/RoundWhiteBlur.vue';
     import ProgressBar from './components/ProgressBar.vue';
     import LinearProgressBar from './components/LinearProgressBar.vue';
+    import ProjectCard from './components/ProjectCard.vue';
 
     export default {
         components: {
@@ -242,7 +305,8 @@
             SatelliteDish,
             RoundWhiteBlur,
             ProgressBar,
-            LinearProgressBar
+            LinearProgressBar,
+            ProjectCard
         },
 
         setup() {

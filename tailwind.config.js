@@ -64,7 +64,9 @@ export default {
       "Syncopate" : ["Syncopate", "sans-serif"],
       "Sura" : ["Sura", "sans-serif"],
       "RobotoFlex" : ["Roboto Flex", "sans-serif"],
-      "Galada" : ["Galada", "sans-serif"]
+      "Galada" : ["Galada", "sans-serif"],
+      "SquadaOne" : ["Squada One", "sans-serif"],
+      "SplineSans" : ["Spline Sans", "sans-serif"]
     }
   },
   plugins: [

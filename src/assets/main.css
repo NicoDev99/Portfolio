@@ -46,6 +46,12 @@
 /* Galada */
 @import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
 
+/* Squada One */
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+/* Spline Sans */
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap');
+
 
 *, html {
     scroll-behavior: smooth !important;

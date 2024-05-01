@@ -208,9 +208,9 @@
         <div class="mt-36 mx-10" id="projects">
             <div class="w-fit mx-auto text-center">
                 <h2 class="text-[#767478] text-xl font-Galada">Quelques projets récents</h2>
-                <TiitleShootingSide>
+                <TitleShootingSide>
                     <h1 class="uppercase text-white text-center font-Syncopate text-4xl font-bold">Mes projets</h1>
-                </TiitleShootingSide>
+                </TitleShootingSide>
             </div>
 
 
@@ -257,7 +257,9 @@
         </div>
 
         <!-- Contact -->
-        <div class="mt-64 pb-[600px] relative max-w-[1920px] mx-auto" id="contact">
+        <div class="mt-64 relative max-w-[1920px] mx-auto pb-40" id="contact">
+
+            <RoundWhiteBlur class="absolute -bottom-10 -right-10 z-0"/>
 
             <!-- Shooting stars -->
             <div class="hidden 2xl:block absolute top-10 left-0">
@@ -308,6 +310,12 @@
                 </button>
             </div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="w-full bg-white py-5 px-10 flex flex-col gap-y-5 sm:flex-row sm:justify-between sm:items-center text-center z-10" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
+        <p class="font-Roboto text-[#4E4E4E] text-sm">Copyright &copy 2023 Erwan Nicolas</p>
+        <a href="/" class="font-Roboto text-[#4E4E4E] text-sm">Conditions Générales d'Utilisation</a>
     </div>
 </template>
 
@@ -367,6 +375,7 @@
 
         setup() {
             AOS.init({
+                offset: 0,
                 once: true
             });
         },

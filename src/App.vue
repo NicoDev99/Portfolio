@@ -283,28 +283,38 @@
 
             <div class="max-w-3xl mx-10 md:mx-auto mt-10">
 
+                <div v-if="this.error['main']" class="bg-red-300 w-fit mx-auto rounded my-12">
+                    <p class="px-10 py-5 text-red-700 text-center">{{ this.error["main"] }}</p>
+                </div>
+                <div v-if="this.success" class="bg-green-300 w-fit mx-auto rounded my-12">
+                    <p class="px-20 py-5 text-green-700 text-center">{{ this.success }}</p>
+                </div>
+
                 <div class="w-full relative">
-                    <input type="email" class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full relative z-0" id="email" v-model="this.email">
+                    <input type="email" class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full relative z-0" :class="this.error['email'] ? 'border border-solid border-red-500' : ''" id="email" v-model="this.email" @focus="this.error['email'] = null">
                     <label for="email" class="font-Roboto text-white absolute transition-all ease z-10" :class="this.email == '' ? 'top-3 left-5' : '-top-7 left-0'">Email</label>
+                    <p class="text-red-500 absolute -bottom-6 right-0">{{ this.error["email"] }}</p>
                 </div>
 
                 <div class="w-full relative mt-12">
-                    <input type="text" class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full relative z-0" id="subject" v-model="this.subject">
+                    <input type="text" class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full relative z-0" :class="this.error['subject'] ? 'border border-solid border-red-500' : ''" id="subject" v-model="this.subject" @focus="this.error['subject'] = null">
                     <label for="subject" class="font-Roboto text-white absolute transition-all ease z-10" :class="this.subject == '' ? 'top-3 left-5' : '-top-7 left-0'">Sujet</label>
+                    <p class="text-red-500 absolute -bottom-6 right-0">{{ this.error["subject"] }}</p>
                 </div>
 
                 <div class="w-full relative mt-12">
-                    <textarea class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full mt-10 min-h-72 z-0" id="message" v-model="this.message"></textarea>
+                    <textarea class="bg-[#282828] px-5 py-3 outline outline-0 text-white font-Roboto block w-full mt-10 min-h-72 z-0" :class="this.error['message'] ? 'border border-solid border-red-500' : ''" id="message" v-model="this.message" @focus="this.error['message'] = null"></textarea>
                     <label for="message" class="font-Roboto text-white absolute transition-all ease z-10" :class="this.message == '' ? 'top-3 left-5' : '-top-7 left-0'">Message</label>
+                    <p class="text-red-500 absolute -bottom-6 right-0">{{ this.error["message"] }}</p>
                 </div>
 
-                <label for="readCGU" class="text-white font-Roboto font-light mt-8 flex gap-x-3 items-center text-xs md:text-base">
-                    <input type="checkbox" class="hidden" id="readCGU">
-                    <div class="border border-solid border-white rounded w-4 md:w-5 h-4 md:h-5"></div>
+                <label for="readCGU" class="text-white font-Roboto font-light mt-8 flex gap-x-3 items-center text-xs md:text-base relative">
+                    <input type="checkbox" class="hidden" id="readCGU" v-model="this.readCGU" @click="this.error['readCGU'] ? this.error['readCGU'] = false : ''">
+                    <div class="border border-solid border-white rounded w-4 md:w-5 h-4 md:h-5 cursor-pointer" :class="this.error['readCGU'] ? 'border border-solid border-red-500' : ''"></div>
                     <p>J'ai lu et j'accepte les <a href="" class="underline">Conditions Générales d'Utilisation</a></p>
                 </label>
 
-                <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500" @click="this.mail()">
+                <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500" @click="this.sendMail()">
                     Envoyer
                     <SendIcon color="white"/>
                 </button>
@@ -323,6 +333,8 @@
 <script>
     import AOS from 'aos';
     import 'aos/dist/aos.css'
+
+    import emailjs from '@emailjs/browser';
 
     import BurgerIcon from './components/icons/Burger.vue'
     import CompNavLink from "./components/ComputerNavLink.vue"
@@ -378,6 +390,10 @@
                 offset: 0,
                 once: true
             });
+            
+            emailjs.init({
+                publicKey: "gKPitIFCcYkWENQEC",
+            });
         },
 
         data() {
@@ -387,7 +403,11 @@
                 // Form
                 email: "",
                 subject: "",
-                message: ""
+                message: "", 
+                readCGU: false,
+
+                error: [],
+                success: ""
             }
         },
 
@@ -402,10 +422,58 @@
                 this.isPhoneNavDisplay = !this.isPhoneNavDisplay
             },
 
-            mail : function() {
-                window.open('mailto:test@example.com');
-            }
 
+            sendMail : function() {
+
+                if(this.email) {
+
+                    let formatEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+                    if(!formatEmail.test(this.email)) {
+                        this.error["email"] = "L'email n'est pas correcte"
+                    }
+
+                } else {
+                    this.error["email"] = "Le champs doit être rempli"
+                }
+
+
+                if(this.subject == "") {
+                    this.error["subject"] = "Le champs doit être rempli"
+                }
+
+
+                if(this.message == "") {
+                    this.error["message"] = "Le champs doit être rempli"
+                }
+
+
+                if(this.readCGU == false) {
+                    this.error["readCGU"] = "Vous devez accepter les conditions générales d'utilisation"
+                }
+
+
+                if(!this.error["email"] && !this.error["subject"] && !this.error["message"] && !this.error["redCGU"]) {
+
+                    var templateParams = {
+                        email: this.email,
+                        subject: this.subject,
+                        message: this.message,
+                    };
+
+                    emailjs.send('service_62ygjba', 'template_rwus36v', templateParams).then(
+                        (response) => {
+                            this.success = "Le formulaire a été envoyé avec succès"
+                            this.email = ""
+                            this.subject = ""
+                            this.message = ""
+                        },
+                        (error) => {
+                            this.error["main"] = "Erreur lors de l'envoi du formulaire, veuillez réessayer plus tard"
+                        },
+                    );
+                }
+            },
         }
     }
 </script>
@@ -422,6 +490,7 @@
     }
 
     input[type="checkbox"]:checked + div {
+        border: 1px solid white;
         background-color: white;
     }
 </style>

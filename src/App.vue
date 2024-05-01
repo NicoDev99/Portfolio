@@ -51,7 +51,7 @@
 
 
     <!-- Bg linear gradient -->
-    <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-fit relative" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
+    <div class="bg-gradient-to-b from-[#161B1F] to-[#010204] w-full h-fit relative overflow-hidden" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
 
         <!-- About me -->
         <div class="pt-20 px-10 md:px-20 relative scroll-smooth max-w-[1920px] w-fit mx-auto" id="about-me">
@@ -304,7 +304,7 @@
                     <p>J'ai lu et j'accepte les <a href="" class="underline">Conditions Générales d'Utilisation</a></p>
                 </label>
 
-                <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500">
+                <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500" @click="this.mail()">
                     Envoyer
                     <SendIcon color="white"/>
                 </button>
@@ -401,6 +401,10 @@
             togglePhoneNav : function() {
                 this.isPhoneNavDisplay = !this.isPhoneNavDisplay
             },
+
+            mail : function() {
+                window.open('mailto:test@example.com');
+            }
 
         }
     }

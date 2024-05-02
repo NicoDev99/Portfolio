@@ -70,6 +70,8 @@ export default {
       "VollkornSC" : ["Vollkorn SC", "sans-serif"],
       "Trykker" : ["Trykker", "sans-serif"],
       "RedHatText" : ["Red Hat Text", "sans-serif"],
+      "RedRose" : ["Red Rose", "sans-serif"],
+      "GoblinOne" : ["Goblin One", "sans-serif"]
     }
   },
   plugins: [

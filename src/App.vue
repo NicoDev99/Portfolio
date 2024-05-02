@@ -274,7 +274,7 @@
 
             <div class="w-fit mx-auto">
                 <h2 class="font-VollkornSC text-[#767478] text-center mx-10 md:mx-0 text-sm md:text-xl">Vous avez une question ou bien une remarque ? Alors ...</h2>
-                <h1 class="font-Trykker text-white text-center text-xl md:text-5xl uppercase mt-5">Contactez-moi</h1>
+                <h1 class="font-Trykker text-white font-light text-center text-xl md:text-5xl uppercase mt-5">Contactez-moi</h1>
                 <Separator class="mx-auto mt-10" data-aos="fade-up"/>
             </div>
 
@@ -283,11 +283,11 @@
 
             <div class="max-w-3xl mx-10 md:mx-auto mt-10">
 
-                <div v-if="this.error['main']" class="bg-red-300 w-fit mx-auto rounded my-12">
-                    <p class="px-10 py-5 text-red-700 text-center">{{ this.error["main"] }}</p>
+                <div v-if="this.success" class="bg-green-400 w-full rounded my-12">
+                    <p class="px-20 py-5 text-gray-50 text-center">Succès : {{ this.success }}</p>
                 </div>
-                <div v-if="this.success" class="bg-green-300 w-fit mx-auto rounded my-12">
-                    <p class="px-20 py-5 text-green-700 text-center">{{ this.success }}</p>
+                <div v-if="this.error['main']" class="bg-red-400 w-full rounded my-12">
+                    <p class="px-10 py-5 text-gray-50 text-center">Erreur : {{ this.error["main"] }}</p>
                 </div>
 
                 <div class="w-full relative">
@@ -315,9 +315,13 @@
                 </label>
 
                 <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500" @click="this.sendMail()">
-                    Envoyer
+                    {{ this.sendButton }}
                     <SendIcon color="white"/>
                 </button>
+
+                <!-- <div v-if="this.error['main']" class="bg-red-300 w-fit mx-auto rounded my-12">
+                    <p class="px-10 py-5 text-red-700 text-center">{{ this.error["main"] }}</p>
+                </div> -->
             </div>
         </div>
     </div>
@@ -405,6 +409,8 @@
                 subject: "",
                 message: "", 
                 readCGU: false,
+                sendButton: "Envoyer",
+                sendTextInterval : null,
 
                 error: [],
                 success: ""
@@ -423,6 +429,13 @@
             },
 
 
+            /**
+             * Send a mail from the user to me
+             * First the fonction will check if the informations filled are correct and send me 
+             * a mail after
+             * 
+             * @return {void}
+             */
             sendMail : function() {
 
                 if(this.email) {
@@ -434,17 +447,17 @@
                     }
 
                 } else {
-                    this.error["email"] = "Le champs doit être rempli"
+                    this.error["email"] = "Le champ doit être rempli"
                 }
 
 
                 if(this.subject == "") {
-                    this.error["subject"] = "Le champs doit être rempli"
+                    this.error["subject"] = "Le champ doit être rempli"
                 }
 
 
                 if(this.message == "") {
-                    this.error["message"] = "Le champs doit être rempli"
+                    this.error["message"] = "Le champ doit être rempli"
                 }
 
 
@@ -454,6 +467,8 @@
 
 
                 if(!this.error["email"] && !this.error["subject"] && !this.error["message"] && !this.error["redCGU"]) {
+
+                    this.sendText(true)
 
                     var templateParams = {
                         email: this.email,
@@ -467,13 +482,42 @@
                             this.email = ""
                             this.subject = ""
                             this.message = ""
+                            this.sendText(false)
                         },
                         (error) => {
                             this.error["main"] = "Erreur lors de l'envoi du formulaire, veuillez réessayer plus tard"
+                            this.sendText(false)
                         },
                     );
                 }
             },
+
+
+            /**
+             * Animate the text button where the form is sent 
+             * @param {bool} start 
+             * 
+             * @return {void}
+             */
+            sendText : function(start) {
+                if(start) {
+                    let _this = this
+                    this.sendTextInterval = setInterval(function(){
+                        if(_this.sendButton == "Envoie") {
+                            _this.sendButton = "Envoie ."
+                        } else if(_this.sendButton == "Envoie .") {
+                            _this.sendButton = "Envoie .."
+                        } else if(_this.sendButton == "Envoie ..") {
+                            _this.sendButton = "Envoie ..."
+                        } else {
+                            _this.sendButton = "Envoie"
+                        }
+                    }, 1000)
+                } else {
+                    clearInterval(this.sendTextInterval)
+                    this.sendButton = "Envoyer"
+                }
+            }
         }
     }
 </script>
@@ -482,11 +526,13 @@
     input:focus + label {
         top: -28px;
         left: 0px;
+        font-size: 14px;
     }
 
     textarea:focus + label {
         top: -28px;
         left: 0px;
+        font-size: 14px;
     }
 
     input[type="checkbox"]:checked + div {

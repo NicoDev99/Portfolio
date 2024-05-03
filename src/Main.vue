@@ -297,7 +297,7 @@
 
     <!-- Footer -->
     <div class="w-full bg-white py-5 px-10 flex flex-col gap-y-5 sm:flex-row sm:justify-between sm:items-center text-center z-10" :class="this.isPhoneNavDisplay ? 'hidden' : 'block'">
-        <p class="font-Roboto text-[#4E4E4E] text-sm">Copyright © 2023 Erwan Nicolas</p>
+        <p class="font-Roboto text-[#4E4E4E] text-sm">Copyright © {{ new Date().getFullYear() }} Erwan Nicolas</p>
         <RouterLink to="/CGU" class="font-Roboto text-[#4E4E4E] text-sm">Conditions Générales d'Utilisation</RouterLink>
     </div>
 </template>

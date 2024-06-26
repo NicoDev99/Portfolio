@@ -77,6 +77,7 @@ export default {
       "VollkornSC" : ["Vollkorn SC", "sans-serif"],
       "Trykker" : ["Trykker", "sans-serif"],
       "RedHatText" : ["Red Hat Text", "sans-serif"],
+      "Yaldevi": ["Yaldevi", "sans-serif"]
     }
   },
   plugins: [],

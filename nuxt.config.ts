@@ -11,4 +11,8 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  aos: {
+    offset: 0,
+    once: true
+  }
 })

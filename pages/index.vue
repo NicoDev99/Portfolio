@@ -341,7 +341,7 @@
         <label for="readCGU" class="text-white font-Roboto font-light mt-8 flex gap-x-3 items-center text-xs md:text-base relative">
           <input type="checkbox" class="hidden" id="readCGU" v-model="this.readCGU" @click="this.error['readCGU'] ? this.error['readCGU'] = false : ''">
           <div class="border border-solid border-white rounded w-4 md:w-5 h-4 md:h-5 cursor-pointer" :class="this.error['readCGU'] ? 'border border-solid border-red-500' : ''"></div>
-          <p>J'ai lu et j'accepte les <a href="" class="underline">Conditions Générales d'Utilisation</a></p>
+          <p>J'ai lu et j'accepte les <NuxtLink to="/CGU" class="underline">Conditions Générales d'Utilisation</NuxtLink></p>
         </label>
 
         <button class="mt-16 text-white text-lg cursor-pointer flex gap-x-4 items-center border border-solid border-white px-5 py-2 rounded hover:bg-white/10 duration-500" @click="this.sendMail()">
